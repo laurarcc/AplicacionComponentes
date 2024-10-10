@@ -1,32 +1,35 @@
 import {Card, CardActionArea, CardActions, CardContent, CardMedia, IconButton, Typography} from "@mui/material";
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import FavoriteOutlinedIcon from '@mui/icons-material/FavoriteOutlined';
-function Testimonio({name, country, profession, description, imageUrl, imageSize}) {
+import {useState} from "react";
+function Testimonio({name, opinion, country, profession, description, imageUrl, imageSize}) {
     const [isFavorited, setIsFavorited] = useState(false);
     const toggleFavorite = () => {
-        setIsFavorited((prev) => !prev);
+        setIsFavorited(!isFavorited);
     };
 
     return (
         <>
             <div>
-                <Card size={'auto'}>
+                <Card style={{maxWidth:600, margin:"1em auto"}}>
                     <CardActionArea>
                         <CardMedia
-                            src={imageUrl}
-                            alt={'imagen'}
-                            sx={{width:imageSize, height:imageSize}}>
+                            component="img"
+                            alt={description}
+                            height={imageSize}
+                            image={imageUrl}
+                            >
                         </CardMedia>
                         <CardContent>
-                            <Typography variant='h2'>{name} en {country}</Typography>
-                            <Typography variant='h3'>{profession}</Typography>
-                            <Typography>{description}</Typography>
+                            <Typography variant='h3'>{name} en {country}</Typography>
+                            <Typography variant='h7'>{profession}</Typography>
+                            <Typography variant='body2'>{opinion}</Typography>
                         </CardContent>
                     </CardActionArea>
                     <CardActions>
-                        <IconButton>
+                        <IconButton >
                             <IconButton onClick={toggleFavorite}>
-                                {isFavorited ? <FavoriteOutlinedIcon /> : <FavoriteBorderOutlinedIcon />}
+                                {isFavorited ? <FavoriteOutlinedIcon color={'error'} /> : <FavoriteBorderOutlinedIcon/>}
                             </IconButton>
                         </IconButton>
                     </CardActions>

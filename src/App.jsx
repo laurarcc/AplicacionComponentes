@@ -10,7 +10,8 @@ function App() {
         profession: "Ingeniero Informático experto en CSS",
         opinion: "React ha revolucionado mi forma de construir interfaces de usuario. " +
             "La capacidad de crear componentes reutilizables me permite mantener un código limpio y organizado. " +
-            "Además, la gestión del estado con hooks ha simplificado mucho el proceso. Definitivamente, es una herramienta poderosa para proyectos a gran escala.",
+            "Además, la gestión del estado con hooks ha simplificado mucho el proceso. Definitivamente, " +
+            "es una herramienta poderosa para proyectos a gran escala.",
         imageUrl: './639839316.jpg',
         description:"Chico joven con un esmoquin",
         imageSize: 400,
